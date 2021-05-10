@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shopViewModel"
+            type="com.professionalandroid.apps.shopping.viewmodels.ShopViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ProductDetailFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <ImageView
+                android:id="@+id/productDetailImageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:productImage="@{shopViewModel.product.imgUrl}"
+                android:src="@drawable/at8040"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
+
+            <TextView
+                android:id="@+id/productDetailNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{shopViewModel.product.name}"
+                tools:text="at8040-57e"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:id="@+id/productDetailPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{shopViewModel.product.price+ `원`}"
+                tools:text="810000 원"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:id="@+id/productDetailAvailableTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{shopViewModel.product.available ? `구매가능` : `재고없음`}"
+                tools:text="구매가능 / 재고없음"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@{shopViewModel.product.available ? @color/green : @color/red}"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="제품설명"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textSecondary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                tools:text="@string/example_description"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <Button
+                android:id="@+id/productDetailAddToCartButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{shopViewModel.product.available}"
+                android:text="장바구니"
+                android:onClick="@{() -> shopViewModel.addProductToCart(shopViewModel.product)}"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="orderItem"
+            type="com.professionalandroid.apps.shopping.models.CartItem"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground">
+        <ImageView
+            android:id="@+id/oderItemImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:productImage="@{orderItem.product.imgUrl}"
+            app:srcCompat="@drawable/at8040"
+            />
+        <TextView
+            android:id="@+id/oderItemNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{orderItem.product.name}"
+            tools:text="at8040"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+        <TextView
+            android:id="@+id/oderItemPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{String.valueOf(orderItem.product.price)+`원`}"
+            tools:text="810000원"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+        <TextView
+            android:id="@+id/oderItemQtyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{`수량: `+orderItem.quantity+`개`}"
+            tools:text="수량 :3 개"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+    </LinearLayout>
+</layout>

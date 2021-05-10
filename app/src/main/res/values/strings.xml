@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shopping</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="example_description">세계 4 영역의 전파 송신소에 대응 다 국 수신 된 전파 시계 10 만년에 1 초의 오차로 불리는 원자 시계의 표준 전파를 자동으로 수신하여 정확한 시간과 일정에 수정. ATTESA 전파 시계는 휴대 전화의 전파 등의 노이즈가 적은 자정에 자동으로 동기화. 일본, 중국, 미국, 유럽 세계 4 영역의 전파 송신소에서 전송되는 표준 전파 수신을 지원합니다. TECHNOLOGY SPECIAL SITE 시간은 어긋나 말라. 전파 시계 이기에 삼위 일체의 기술. Perfex 멀티 3000 Perfex (파 펙스)는 JIS1 종 내자, 충격 감지 기능, 바늘 자동 보정 기능이라는 세가지 기능을 통합하고보다 정확한 시각 표시를 허용 한 시민 독자적인 선진 기술. 게다가, 일본, 중국, 미국, 유럽 지역에서 전송되는 표준 전파를 고감도 수신을 가능하게하는 기술이 Perfex 멀티 3000이다.</string>
+    <string-array name="quantity_string_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
